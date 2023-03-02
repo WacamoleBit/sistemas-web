@@ -1,0 +1,26 @@
+<!-- <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</tr>
+                <th scope="col">Nombre</tr>
+                <th scope="col">Apellido</tr>
+                <th scope="col">Edad</tr>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($alumnos as $alumno)
+                <tr>
+                    <td>{{ $alumno->id }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $alumno->first_name }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $alumno->last_name }}</td>
+                </tr>
+                <tr>
+                    <td>{{ $alumno->age }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table> -->
