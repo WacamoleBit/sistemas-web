@@ -25,10 +25,10 @@
                         <a class="nav-link" href="{{ route('alumnos') }}">Alumnos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Docente</a>
+                        <a class="nav-link" href="{{ route('docentes') }}">Docente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cursos</a>
+                        <a class="nav-link" href="{{ route('cursos') }}">Cursos</a>
                     </li>
                 </ul>
             </div>

@@ -9,30 +9,32 @@ class CursosController extends Controller
 {
     public function index()
     {
-        $alumnos = $this->get_alumnos();
+        $cursos = $this->get_cursos();
 
-        return view('alumnos.index', ['alumnos' => $alumnos]);
+        return view('cursos.index', ['cursos' => $cursos]);
     }
 
-    public function get_alumnos(): array
+    public function get_cursos(): array
     {   
         $lista[0] = new Curso;
-        $lista[0]->id = '1';
-        $lista[0]->firstname = 'Ricardo';
-        $lista[0]->lastname = 'Martinez';
-        $lista[0]->age = 15;
+        $lista[0]->NRC = 33234;
+        $lista[0]->name = 'Tecnologías Web';
+        $lista[0]->turn = 'Matutino';
 
         $lista[1] = new Curso;
-        $lista[1]->id = '2';
-        $lista[1]->firstname = 'Oscar';
-        $lista[1]->lastname = 'Perea';
-        $lista[1]->age = 15;
+        $lista[1]->NRC = 33412;
+        $lista[1]->name = 'Tecnologías Web';
+        $lista[1]->turn = 'Vespertino';
 
         $lista[2] = new Curso;
-        $lista[2]->id = '3';
-        $lista[2]->firstname = 'Manuel';
-        $lista[2]->lastname = 'Hernandez';
-        $lista[2]->age = 25;
+        $lista[2]->NRC = 32254;
+        $lista[2]->name = 'Desarrollo de software';
+        $lista[2]->turn = 'Matutino';
+
+        $lista[3] = new Curso;
+        $lista[3]->NRC = 32216;
+        $lista[3]->name = 'Desarrollo de software';
+        $lista[3]->turn = 'Vespertino';
 
         return $lista;
     }

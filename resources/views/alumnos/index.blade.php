@@ -4,7 +4,7 @@
     <div class="jumbotron jumbotron-fluid p-1">
         <div class="container-fluid">
             <h1 class="display-1">Sección de alumnos</h1>
-            <p class="lead">En esta sección se puede registrar nuevos alumnos y los muestra en una tabla.</p>
+            <p class="lead">En esta sección se muestran los datos de los alumnos en una tabla.</p>
         </div>
     </div>
     <!-- <div class="container w-25 border py-4">

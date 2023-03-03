@@ -9,8 +9,7 @@ class Curso extends Model
 {
     use HasFactory;
 
-    public int $id;
-    public string $fisrtname;
-    public string $secondname;
-    public int $age;
+    public int $NRC;
+    public string $name;
+    public string $turn;
 }
