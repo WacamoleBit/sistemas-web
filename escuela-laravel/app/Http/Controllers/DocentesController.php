@@ -32,7 +32,7 @@ class DocentesController extends Controller
         $lista[2]->lastname = 'Castañeda';
 
         $lista[3] = new Docente;
-        $lista[3]->personal_number = 623524;
+        $lista[3]->personal_number = 6235243;
         $lista[3]->firstname = 'Itzel';
         $lista[3]->lastname = 'Reyes';
 

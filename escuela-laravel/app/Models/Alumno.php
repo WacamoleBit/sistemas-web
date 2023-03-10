@@ -10,7 +10,7 @@ class Alumno extends Model
     use HasFactory;
 
     public int $id;
-    public string $fisrtname;
+    public string $firstname;
     public string $secondname;
     public int $age;
 
@@ -19,9 +19,9 @@ class Alumno extends Model
         $this->id = $id;
     }
 
-    public function setFirstName(string $fisrtname): void
+    public function setFirstName(string $firstname): void
     {
-        $this->id = $fisrtname;
+        $this->id = $firstname;
     }
 
     public function setSecondName(string $lastname): void
@@ -42,7 +42,7 @@ class Alumno extends Model
 
     public function getFirstName(): string
     {
-        return $this->fisrtname;
+        return $this->firstname;
     }
 
     public function getSecondName(): string
