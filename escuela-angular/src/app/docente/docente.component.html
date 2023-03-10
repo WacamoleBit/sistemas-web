@@ -1,0 +1,25 @@
+<div class="jumbotron jumbotron-fluid p-1">
+    <div class="container-fluid">
+        <h1 class="display-1">Sección de cursos</h1>
+        <p class="lead">En esta sección se muestran los datos de los cursos en una tabla.</p>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th>NRC</th>
+                <th>Nombre</th>
+                <th>Turno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let docente of docentes">
+                <td> {{docente.personalNumber}} </td>
+                <td> {{docente.firstname}} </td>
+                <td> {{docente.lastname}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
