@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('/alumnos', [AlumnosController::class, 'index'])->name('alumnos');
 
+Route::post('/alumnos', [AlumnosController::class, 'store']);
+
 Route::get('/docentes', [DocentesController::class, 'index'])->name('docentes');
 
 Route::get('/cursos', [CursosController::class, 'index'])->name('cursos');

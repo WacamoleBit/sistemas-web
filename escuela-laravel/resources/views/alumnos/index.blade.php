@@ -7,25 +7,25 @@
             <p class="lead">En esta sección se muestran los datos de los alumnos en una tabla.</p>
         </div>
     </div>
-    <!-- <div class="container w-25 border py-4">
-        <form>
+    <div class="container w-25 border py-4">
+        <form action="{{ route('alumnos') }}" method="POST">
+            @csrf
             <div class="form-group mb-3">
-                <label for="firstname">Nombre</label>
-                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Nombre">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
             </div>
             <div class="form-group mb-3">
-                <label for="lastname">Apellido</label>
-                <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Apellido">
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido">
             </div>
             <div class="form-group mb-3">
-                <label for="age">Edad</label>
-                <input type="text" name="age" id="age" class="form-control" placeholder="Edad">
+                <label for="edad">Edad</label>
+                <input type="text" name="edad" id="edad" class="form-control" placeholder="Edad">
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
             
         </form>
-    </div> -->
-
+    </div> 
     <div class="container-fluid">
         <table class="table table-success table-striped">
             <thead>
@@ -40,9 +40,9 @@
                 @foreach($alumnos as $alumno)
                 <tr>
                     <td> {{$alumno->id}} </td>
-                    <td> {{$alumno->firstname}} </td>
-                    <td> {{$alumno->lastname}} </td>
-                    <td> {{$alumno->age}} </td>
+                    <td> {{$alumno->nombre}} </td>
+                    <td> {{$alumno->apellido}} </td>
+                    <td> {{$alumno->edad}} </td>
                 </tr>
                 @endforeach
             </tbody>
