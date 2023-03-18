@@ -18,22 +18,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-})->name('home');
+})->name('inicio');
 
-Route::get('/alumnos', [AlumnosController::class, 'index'])->name('alumnos');
+Route::get('/alumnos', [AlumnosController::class, 'index'])->name('mostrar-alumnos');
 
-Route::get('/alumnosCreate', function () {
+Route::get('/alumnos/nuevo', function () {
     return view('alumnos.create');
-})->name('crearAlumno');
+})->name('crear-alumno');
 
-Route::get('/alumnoShow/{id}', [AlumnosController::class, 'show'])->name('mostrarAlumno');
+Route::post('/alumnos/guardar', [AlumnosController::class, 'store'])->name('guardar-alumno');
 
-Route::patch('/alumnoEdit/{id}', [AlumnosController::class, 'update'])->name('editarAlumno');
+Route::get('/alumnos/{id}/detalles', [AlumnosController::class, 'details'])->name('detalles-alumno');
 
-Route::delete('/alumnoDelete/{id}', [AlumnosController::class, 'destroy'])->name('borrarAlumno');
+Route::get('/alumnos/{id}/editar', [AlumnosController::class, 'edit'])->name('editar-alumno');
 
-Route::post('/alumnoStore', [AlumnosController::class, 'store'])->name('guardarAlumno');
+Route::patch('/alumnos/{id}/actualizar', [AlumnosController::class, 'update'])->name('actualizar-alumno');
 
-Route::get('/docentes', [DocentesController::class, 'index'])->name('docentes');
+Route::delete('/alumnos/{id}/borrar', [AlumnosController::class, 'destroy'])->name('borrar-alumno');
 
-Route::get('/cursos', [CursosController::class, 'index'])->name('cursos');
+Route::get('/docentes/todos', [DocentesController::class, 'index'])->name('mostrar-docentes');
+
+Route::get('/cursos/todos', [CursosController::class, 'index'])->name('mostrar-cursos');

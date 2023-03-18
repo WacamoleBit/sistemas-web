@@ -8,10 +8,10 @@ use Illuminate\Http\RedirectResponse;
 
 class AlumnosController extends Controller
 {
-    //index - mostrar todos los elementos
     //store - guardar todo
-    //update - actualizar todo
-    //destroy - eliminar todo
+    //index - mostrar todos los elementos
+    //update - actualizar 
+    //destroy - eliminar 
     //edit - mostrar el formulario de edición
     public function store(Request $request): RedirectResponse
     {
@@ -29,7 +29,7 @@ class AlumnosController extends Controller
         $alumno->save();
 
         // return redirect()->route('crearAlumno', ['success' => 'Alumno guardado exitosamente']);
-        return redirect()->route('alumnos');
+        return redirect()->route('mostrar-alumnos');
     }
 
     public function index()
@@ -39,7 +39,14 @@ class AlumnosController extends Controller
         return view('alumnos.index', ['alumnos' => $alumnos]);
     }
 
-    public function show($id){
+    public function details($id) 
+    {
+        $alumno = Alumno::find($id);
+
+        return view('alumnos.details', ['alumno' => $alumno]);
+    }
+
+    public function edit($id){
         $alumno = Alumno::find($id);
 
         return view('alumnos.edit', ['alumno' => $alumno]);
@@ -49,13 +56,19 @@ class AlumnosController extends Controller
     {
         $alumno = Alumno::find($id);
 
+        $request->validate([
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'edad' => 'required'
+        ]);
+
         $alumno->nombre = $request->nombre;
         $alumno->apellido = $request->apellido;
         $alumno->edad = $request->edad;
 
         $alumno->save();
 
-        return redirect()->route('alumnos');
+        return redirect()->route('mostrar-alumnos');
     }
 
     public function destroy(int $id) 
@@ -64,6 +77,6 @@ class AlumnosController extends Controller
 
         $alumno->delete();
 
-        return redirect()->route('alumnos');
+        return redirect()->route('mostrar-alumnos');
     }
 }

@@ -1,10 +1,8 @@
 @extends('app')
 
 @section('content')
-    @scc    
-
     <div class="container w-25 border py-4">
-        <form action="{{ route('guardarAlumno') }}" method="POST">
+        <form action="{{ route('guardar-alumno') }}" method="POST">
             @csrf
             <div class="form-group mb-3">
                 <label for="nombre">Nombre</label>
@@ -18,6 +16,7 @@
                 <label for="edad">Edad</label>
                 <input type="number" name="edad" id="edad" class="form-control" placeholder="Edad">
             </div>
+            
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>     

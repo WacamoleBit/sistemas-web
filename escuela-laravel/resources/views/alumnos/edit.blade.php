@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container w-25 border py-4">
-        <form action="{{ route('editarAlumno', ['id' => $alumno->id]) }}" method="POST">
+        <form action="{{ route('actualizar-alumno', ['id' => $alumno->id]) }}" method="POST">
+            @method('PATCH')
             @csrf
             <div class="form-group mb-3">
                 <label for="nombre"></label>
@@ -16,6 +17,7 @@
                 <label for="edad"></label>
                 <input type="number" name="edad" id="edad" class="form-control" placeholder="Edad" value="{{ $alumno->edad }}">
             </div>
+
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>     

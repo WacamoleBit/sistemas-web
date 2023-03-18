@@ -9,17 +9,20 @@
     </div>
 
     <div class="container-fluid">
-        <p>Crear <a href="{{ route('crearAlumno') }}">nuevo alumno</a></p>
-    </div>
-    <div class="container-fluid">
-        <table class="table table-success table-striped">
+        <form action="{{ route('crear-alumno') }}" method="GET">
+            <button class="btn btn-primary float-end mb-3" type="submit">
+                Nuevo Alumno
+            </button>
+        </form>
+
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Edad </th>
-                    <th colpan="2">Opciones</th>
+                    <th colspan="2">Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,13 +33,15 @@
                     <td> {{$alumno->apellido}} </td>
                     <td> {{$alumno->edad}} </td>
                     <td>
-                        <a href="{{ route('mostrarAlumno', ['id' => $alumno->id]) }}">Editar</a>
+                        <form action="{{ route('detalles-alumno', ['id' => $alumno->id]) }}" method="GET">
+                            <button class="btn btn-secondary float-end" type="submit">Editar</button>
+                        </form>
                     </td>
                     <td>
-                        <form action="{{ route('borrarAlumno', ['id' => $alumno->id]) }}" method="POST">
+                        <form action="{{ route('borrar-alumno', ['id' => $alumno->id]) }}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <button class="btn btn-danger btn sm">Eliminar</button>
+                            <button type="submit" class="btn btn-danger btn sm float-end">Eliminar</button>
                         </form>
                     </td>
                 </tr>
