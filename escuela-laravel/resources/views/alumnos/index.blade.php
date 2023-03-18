@@ -22,7 +22,7 @@
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Edad </th>
-                    <th colspan="2">Opciones</th>
+                    <th colspan="3">Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,8 +33,13 @@
                     <td> {{$alumno->apellido}} </td>
                     <td> {{$alumno->edad}} </td>
                     <td>
+                        <form action="{{ route('editar-alumno', ['id' => $alumno->id]) }}" method="GET">
+                            <button class="btn btn-warning float-end" type="submit">Editar</button>
+                        </form>
+                    </td>
+                    <td>
                         <form action="{{ route('detalles-alumno', ['id' => $alumno->id]) }}" method="GET">
-                            <button class="btn btn-secondary float-end" type="submit">Editar</button>
+                            <button class="btn btn-info float-end" type="submit">Detalles</button>
                         </form>
                     </td>
                     <td>

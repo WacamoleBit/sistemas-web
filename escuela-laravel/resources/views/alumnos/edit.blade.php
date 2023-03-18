@@ -19,6 +19,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="{{ route('mostrar-alumnos') }}">Regresar</a>
         </form>
     </div>     
 @endsection
